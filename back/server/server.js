@@ -13,13 +13,14 @@ app.use(cors());
 
 // MIDDLEWARE ERREUR
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error('[erreur]', err.message);
     return res.status(500).json({erreur : "Une erreur est survenue"});
 });
 
 // DEMARRAGE SERVEUR 
 
-app.listen(process.env.PORT, () => {
-    console.log("Serveur sur http://localhost:3000");
+
+app.listen(3000, () => {
+    console.log("Connecté sur le PORT 3000");
 });
