@@ -13,7 +13,7 @@ app.use(cors());
 
 // MIDDLEWARE ERREUR
 
-app.use((err, req, res) => {
+app.use((err, req, res) => {   //  <-- suppresion du next 
     console.error('[erreur]', err.message);
     return res.status(500).json({erreur : "Une erreur est survenue"});
 });
